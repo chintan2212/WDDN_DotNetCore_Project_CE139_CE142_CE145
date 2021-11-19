@@ -1,0 +1,46 @@
+﻿@model Project_2.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Student Detail</h4>
+    <hr />
+    <dl class="row">
+
+    </dl>
+
+        <div>
+            Id:@Model.Id
+        </div>
+       
+        <div>
+            Name: @Model.name
+        </div>
+        <div>
+            Email:@Model.email
+        </div>
+        <div>
+            Sem:@Model.sem
+        </div>
+        <div>
+            Department:@Model.department
+        </div>
+        
+        <div>
+            gender:@Model.gender
+        </div>
+        
+
+   
+
+</div>
+<div>
+    <a asp-action="Edit" asp-controller="Student" asp-route-id="@Model.Id">Edit</a> | 
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

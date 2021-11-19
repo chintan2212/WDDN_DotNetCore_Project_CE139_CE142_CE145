@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Student>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    ViewBag.Title = "Students Details";
+}
+<table border="1">
+    <tr>
+        <td>Name</td>
+        <td>Sem</td>
+        <td>Department</td>
+        <td>Email</td>
+       
+        <td>Gender</td>
+        <td>See Record</td>
+        <td>Edit Record</td>
+        <td>Delete Record</td>
+        
+    </tr>
+    @foreach (var s in Model)
+    {
+<tr>
+    <td>@s.name</td>
+    <td>@s.sem</td>
+    <td>@s.department</td>
+    <td>@s.email</td>
+    <td>@s.gender</td>
+
+    <td><a asp-controller="Student" asp-action="Details" asp-route-id="@s.Id">View</a></td>
+    <td><a asp-action="Edit" asp-controller="Student" asp-route-id="@s.Id">Edit</a></td>
+    <td><a asp-action="delete" asp-controller="Student" asp-route-id="@s.Id">Delete</a></td>
+</tr>}
+</table>
+
